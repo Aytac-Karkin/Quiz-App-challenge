@@ -6,11 +6,27 @@ bookmarkButton.addEventListener("click", () => {
   bookmarkButton.classList.toggle("bookmark--active");
 });
 
-function toggleAnswer () {
-    var answer = document.getElementById("answer");
-    if (answer.style.display === "none") {
-        answer.style.display = "block";
+
+const answer = document.querySelector('[data-js="answer"]');
+const answerButton = document.querySelector('[data-js="answerButton"]')
+
+answerButton.addEventListener("click", () => {
+    answer.classList.toggle("card__answer--active")
+
+    if (answer.classList.contains("card__answer--active")) {
+        answerButton.textContent = "Hide answer";
     } else {
-        answer.style.display = "none"
+        answerButton.textContent = "Show Answer"
     }
-}
+
+    // if (answerButton.textContent !== "Show Answer") {
+    //     answerButton.textContent = "Hide Answer";
+    // } else {
+    //     answerButton.textContent = "Show answer";
+    // }
+
+})
+
+
+
+
